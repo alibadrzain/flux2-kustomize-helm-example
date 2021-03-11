@@ -10,3 +10,10 @@ spec:
     branch: master
   url: https://github.com/alibadrzain/fj
 
+flux create kustomization fj \
+  --source=fj \
+  --path="./kustomize" \
+  --prune=true \
+  --validation=client \
+  --interval=5m \
+  --export > ./clusters/staging/fj-kustomization.yaml
